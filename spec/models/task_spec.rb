@@ -1,5 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Task, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it "should have a description" do
+    @task = Task.new(description: 'desc')
+    expect(@task.description).to eq('desc')
+  end
+
 end
