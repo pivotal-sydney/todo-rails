@@ -17,6 +17,8 @@ resource "Tasks" do
       Task.create! description: "This is the second task"
       do_request
       json = JSON.parse(response_body, symbolize_names: true)
+      expect(json.count).to eq(2)
+
       expect(json[0][:description]).to eq ("This is the first task")
       expect(json[1][:description]).to eq ("This is the second task")
     end
@@ -36,6 +38,19 @@ resource "Tasks" do
     example "Should not allow a new task with empty description" do
       do_request({task: {description: ""}})
       expect(status).to be 422
+    end
+  end
+
+  patch "/api/v1/tasks/:id" do
+    let(:task) { Task.create! description: "Original Description" }
+    let(:id) { task.id }
+    example "Should update task description" do
+      do_request({task: {description: "New Description"}})
+      expect(status).to be 200
+      expect(Task.last.description).to eq("New Description")
+
+      json = JSON.parse(response_body, symbolize_names: true)
+      expect(json[:description]).to eq ("New Description")
     end
   end
 
