@@ -17,10 +17,10 @@ resource "Tasks" do
       Task.create! description: "This is the second task"
       do_request
       json = JSON.parse(response_body, symbolize_names: true)
-      expect(json.count).to eq(2)
+      expect(json[:tasks].count).to eq(2)
 
-      expect(json[0][:description]).to eq ("This is the first task")
-      expect(json[1][:description]).to eq ("This is the second task")
+      expect(json[:tasks][0][:description]).to eq ("This is the first task")
+      expect(json[:tasks][1][:description]).to eq ("This is the second task")
     end
   end
 

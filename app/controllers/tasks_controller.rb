@@ -1,8 +1,7 @@
 class TasksController < ApplicationController
 
   def index
-    tasks = Task.all
-    render json: tasks, :only => [:id, :description]
+    render json: {tasks: Task.all}
   end
 
   def create
