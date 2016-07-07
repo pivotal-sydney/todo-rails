@@ -54,4 +54,15 @@ resource "Tasks" do
     end
   end
 
+
+  delete "/api/v1/tasks/:id" do
+    let(:task) { Task.create! description: "Original Description" }
+    let(:id) { task.id }
+    example "Should be removed" do
+      do_request()
+      expect(status).to be 204
+      expect(Task.count).to eq 0
+    end
+  end
+
 end
