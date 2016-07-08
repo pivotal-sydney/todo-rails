@@ -13,3 +13,6 @@ services:
 - postgresql
 before_script:
 - psql -c 'create database project_test;' -U postgres
+notifications:
+  webhooks:
+  - http://pulse.pivotallabs.com/projects/5b4fde67-832b-4d0a-b066-ff918caeacc8/status
