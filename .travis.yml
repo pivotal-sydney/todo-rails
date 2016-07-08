@@ -3,13 +3,13 @@ cache: bundler
 deploy:
   edge: true
   provider: cloudfoundry
-  username: leung.andrew@gmail.com
+  username: labs-sydney-devs-todolist@googlegroups.com
   api: https://api.run.pivotal.io
-  organization: andrew
-  space: labs-sydney-beach
+  organization: labs-sydney-beach
+  space: development
   password:
-    secure: z4bvuXcrIt9uX3GHM2CEPOeDOKgnSLwGeHvg5Y/1cTlSS+4ainQLFcN8BSFF2+aUiQ3iNdAT/yjQRVcgW2GDpFTrvpOhuV1dWqYORbsQ/bkiqb3QkOKLBEX+XVfZIg2N/SGaOWXYPD+eJ6iGWZ6aYwcBQL3mJbdCt8MCq/UFr+joorROi//r2Q7QMCoAWbE0fL0VQyPJzQo+A15FfkTutUTMgrTdfgfby5kqGRxS7hFB7mo6Tmm6CCANRnVPOB0fdtLkt5/MuITUNdcvWvjaN1bJ5HNakXG9YXHZ9uHlJfZhGyh2Y7NIQIsBTPPc3KQogFMmKSr38eafb6cvdQTWIYtujo4YV4zm4/czWDioXf8fAi50Ul7505LFgR3hf075x0XkYRZofs4lGB7Hyh0oiEYMzcmIEN6IqgRS2Q9LTKamwGAeB0qLxAC28hn7VApq8U3WX65rIDnBeKB1KKG5+cVyWnByxP6mMRjHXBKfo7dQD+2LtOKd6RjekOhmBbGyBTYHA2lJAbIqOX2H4MSqG6kMWoM2eGfK1O5q5SCKCBPjysh+ntemzmkKwYjsEPW8HXfs3wHu86rAZmW9J1leI1LfcQK5oagolvOwUcm8ynepj89lhawJnpTev3X1jkicWWjDTOTKwwZHsn312RdF5HWNIsbDL6ndXofi8w3Iz/A=
+    secure: JpQBF+IMaYVt+r6CUbYNeMv/arkd3j5QWcaqsGgQ+D3BCqoP5/FxZkl8jIfjLe0H27xcuAYlFzKP9NH4P7GlBX9zZ8Vs84ZT6jAGHLn1ATY8nqIk73z/HIdKIh4biTF92jgztXqaNtEtzqP3rWT5OLMuM0MCQr1jb9OOds6CANLvXIQxNnyPK2+Klb7ze+YvTQF3in9j6Kq8MPKaPC/Ik5wEhWdsS2G+s7ZoEqJZgEZ8fhcUN6U8OFWEaJVxieNlWFeuLtzY/v0twZzVI4JT25nXKLTD44F71b15Jt23EJiT0vblxmL/pI0bydpl6lTK+Z5AdY+ZPxbX4y10I2CfTlD1ZEpXEBSV2Z495jYdXg2AVnB0iZIc+dFZLYTtULS0c1Vzff3LjrNxHRAvJz+IwYy9B0st7Ph5CmxTVQHnpwm+1Q33bMD/RERv8AIjzTKW9m3lXru2/evZkVSKjxV24o5m7OwV3lsTwCIfwbiZE7HDicOZJQNdqHQSs3Q2/ifTpGtl1mtkGloRMl7ercoycPYgFuR4nafLc2145sItbfTAiE31vgTn0Ea+K2DQxvjSLxEorLq1nHMxDkmM3k3A2dCEvzJMwJJ5shobmX43/y528k/XxfSDluY2eELrn/YOcYle4Khkvm8vRGvRPyOoCnNQfhfsilBRawFGjLZHM6s=
 services:
-  - postgresql
+- postgresql
 before_script:
-  - psql -c 'create database project_test;' -U postgres
+- psql -c 'create database project_test;' -U postgres
